@@ -1,0 +1,42 @@
+extract:
+  scheme: 'https://'
+  host: 'aqua.kingcounty.gov/'
+  path: 'extranet/assessor/'
+
+directories:
+  input_folder: 'input_folder'
+  unpacking_folder: 'unpacking'
+  output_folder: 'output_folder'
+
+files:
+  main_file: 'EXTR_RPSale'
+  used_archives:
+      [
+      'Real%20Property%20Sales.zip',
+      'Condo%20Complex%20and%20Units.zip',
+      'Residential%20Building'
+      ]
+
+  secondary_files:
+    'Square':
+      'Footage': ['EXTR_CondoUnit2.csv']
+      'SqFtTotLiving': ['EXTR_ResBldg.csv']
+    'YrBuilt':
+      'YrBuilt': ['EXTR_CondoComplex.csv', 'EXTR_ResBldg.csv']
+
+
+  required_fields: [
+  'pin',
+  'DocumentDate',
+  'SalePrice',
+  'PropertyType',
+  'YrBuilt',
+  'Square'
+  ]
+  encoding: 'ISO-8859-1'
+
+
+
+
+
+
